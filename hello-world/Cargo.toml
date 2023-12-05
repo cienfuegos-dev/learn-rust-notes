@@ -1,0 +1,17 @@
+[package]
+name = "hello-world"
+version = "0.1.0"
+edition = "2021"
+description = "My description"
+license = "Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+# https://spdx.github.io/license-list-data/
+
+[dependencies]
+rand = "0.8.5"
+say_hello_useless = "0.0.0"
+
+[[bin]]
+name = "hello-world"
+path = "main.rs"

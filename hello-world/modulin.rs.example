@@ -1,0 +1,6 @@
+pub mod modulopide {
+    pub fn say_hello() {
+        println!("Hello from modulin!");
+    }
+}
+

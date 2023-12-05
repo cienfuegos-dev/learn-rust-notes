@@ -1,0 +1,45 @@
+#![allow(unused)]
+
+mod modulin;
+use modulin::modulopide::say_hello as my_hello;
+
+fn main() {
+    my_hello();
+
+    let mut original = String::from("original value");
+    println!("Outer original value:\t '{}'", original);
+
+    {
+        let next = &mut original; // Get a ref to "original" and mut indicates we want to change that value.
+        *next = String::from("next value");
+
+        println!("inner scope next:\t '{}'", next);
+        println!("inner scope original:\t '{}'", original);
+    }
+
+    println!("outer original value:\t '{}'", original);
+}
+
+fn borrowing_example() {
+    // let original = String::from("original value");
+    // println!("Original: \t {}", original);
+
+    // let next = &original; // "original" still owns the memory, "next" can read the memory at the address where "original" is pointing.
+    // println!("Original: \t {}", original); // This will work. Next is a read-only pinter to "original".
+
+    // //
+    // //
+    // //
+
+    // let mut original = String::from("original value");
+    // println!("Original: \t {}", original);
+    // // original = String::from("new value"); // Even if we do change the value of "original", it still will work.
+    // let next = &original;
+    // original = String::from("new value"); // At this point, rust will complain because rust can nolonger guarantee memory safety.
+    // println!("Original: \t {}", next); // Even if we make "original" mutable, this still works, "original" might change, but it's not changing, and the compiler knows that.
+
+    // While there are read-only references to a variable that are being sued donstream, you cannot change the data.
+    // If you aren't using the variable downstream, you have an unused var you should probably get rid of.
+
+    // Ownership of data only returs to "original" when "next" goes out of scope.
+}

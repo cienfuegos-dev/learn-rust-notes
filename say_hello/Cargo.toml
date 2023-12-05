@@ -1,0 +1,10 @@
+[package]
+name = "say_hello_useless"
+version = "0.0.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "Useless modules that prints the word hello. Just used to learn rust cargo."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

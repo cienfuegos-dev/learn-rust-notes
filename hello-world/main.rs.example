@@ -1,0 +1,47 @@
+fn main() {
+    // If let example
+    // let animal = "Duck";
+    // if let "Duck" = animal {
+    //     println!("Quack");
+    // }
+
+    // Ownership only happens on heap memory.
+    // let original = 3222;
+    // // let original = String::from("Cat");
+    // println!("Original: {}", original);
+    // let other = original;
+    // println!("Other: {}", other);
+    // // original = other;
+    // println!("Original: {}", original);
+
+
+    // Lifetime help us indicate which lifetime of which var to use for a given borrowed var.
+    // let value_one = 24;
+    // let value_two = 67;
+    // let value = explicit_lifetime_wrong(&value_one, &value_two);
+    // println!("Result {}", value);
+
+
+}
+
+fn explicit_lifetime_wrong(p1: &i32, p2: &i32) -> &i32 {
+    if p1 > p2 {
+        p1
+    } else {
+        p2
+    }
+}
+
+fn explicit_lifetime<'a>(p1: &'a i32, p2: &'a i32) -> &'a i32 {
+    if p1 > p2 {
+        p1
+    } else {
+        p2
+    }
+}
+
+fn other_syntax(p1: &i32, p2: i32, p3: &f64) {
+}
+
+fn lifetime_syntax<'a, 'b>(p1: &'a i32, p2: i32, p3: &'b f64) {
+}
